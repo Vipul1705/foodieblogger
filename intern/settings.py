@@ -26,7 +26,7 @@ SECRET_KEY = '1)#+tzbxfisj)c-g^-6s0^22gt1pi4t5b$j7$5!ki%j1443i46'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://foodieblogger.herokuapp.com/blog/', '127.0.0.1']
 
 
 # Application definition
