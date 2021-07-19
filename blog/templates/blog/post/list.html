@@ -1,0 +1,75 @@
+{%	extends	"blog/base.html"	%}
+{% block title	%}My Blog{%	endblock %}
+{% block css %}
+    .date{
+        color:grey;
+    }
+    .details{
+        font-weight:300;
+    }
+	.header{
+		position: absolute;
+    	top: 545px;
+    	left: 615px;
+    	color: #fff;
+    	font-weight: 700;
+    	font-size: 60px;
+	}
+	.header-card{
+		width: 60%;
+    	position: absolute;
+    	top: 685px;
+    	left: 300px;
+    	color: #fff;
+    	background: transparent;
+		text-align: center;
+    	height: auto;
+		font-weight:400;
+		font-size:34px;
+	}
+{% endblock	%}
+{% block content %}
+<img src="/static/blog/home.jpg" alt="Food Blog Wallpaper" style="width:100%">
+
+<h2 class="header"><em>Foodie Blog</em></h2>
+<div class="card border-light mb-3 header-card">
+  <div class="card-body">
+    <h3 class="card-title">About Us</h3>
+    <p class="card-text">Welcome to our Foodie Blog website. Here you will find varities of food blogs. You guys can share , comment on your favourite food blog. Join us to write your own food journey. Thank you for visiting our site.</p>
+  </div>
+</div>
+{% comment %} <img src="/static/blog/home2.jpg" alt="Food Blog Wallpaper" style="width:100%; max-height:840px;"> {% endcomment %}
+<div class="container mt-2">
+ 	 <div class="row">
+		<h1><em>Food Blog</em></h1>
+    	<hr>
+		{% for post	in posts %}
+		<div class="col">
+		<div class="card text-center" style="width: 18rem;">
+  			<img src="/media/{{post.image}}" class="card-img-top" alt="...">
+  				<div class="card-body">
+    			<h5 class="card-title">{{ post.title }}</h5>
+    			<p class="card-text">Published {{post.publish}}	by	{{post.author}}</p>{{post.body|truncatewords:30|linebreaks}}
+    			<a href="{{	post.get_absolute_url }}" class="btn btn-primary">View</a>
+ 				</div>
+		</div>
+		</div>
+	
+	{%	endfor	%}
+	{% include "pagination.html" with page=page_obj %}
+	</div>
+</div>
+	<!--{% for post	in posts %}
+	<h2>
+	<a href="{{	post.get_absolute_url }}">
+	{{ post.title }}
+	</a>
+	</h2>
+	<p	class="date">
+	Published {{post.publish}}	by	{{post.author}}
+	</p>
+	{{post.body|truncatewords:30|linebreaks}}
+	{%	endfor	%}
+	-->
+	
+{%	endblock	%}
