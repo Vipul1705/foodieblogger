@@ -1,0 +1,1 @@
+web: gunicorn itern.wsgi --log-file -
