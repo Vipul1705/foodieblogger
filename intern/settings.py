@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1)#+tzbxfisj)c-g^-6s0^22gt1pi4t5b$j7$5!ki%j1443i46'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['foodieblogger.herokuapp.com', '127.0.0.1']
 
