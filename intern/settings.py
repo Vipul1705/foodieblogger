@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+# import django_heroku
 # import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1)#+tzbxfisj)c-g^-6s0^22gt1pi4t5b$j7$5!ki%j1443i46'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['foodieblogger.herokuapp.com', '127.0.0.1']
 
@@ -136,8 +136,8 @@ AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
 
-    # `allauth` specific authentication methods, such as login by e-mail
-    "allauth.account.auth_backends.AuthenticationBackend",
+    # # `allauth` specific authentication methods, such as login by e-mail
+    # "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 #Managing media
@@ -150,4 +150,4 @@ MEDIA_URL = '/media/'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #activate Django-Heroku
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
